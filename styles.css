@@ -42,3 +42,10 @@ body {
     height: 34px; 
     width: 35px;
 }
+.describe {
+    display: flex;
+    align-items: center;
+} 
+h2, h1 {
+    margin: 0px;
+} 
