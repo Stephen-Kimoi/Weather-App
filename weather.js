@@ -30,12 +30,22 @@ class Weather {
 
         console.log(name,icon, description, temp, humidity, speed, pressure); 
     }
+
+    // Function for searching location 
+    search () {
+        this.getWeather(document.querySelector('.search-bar').value); 
+    }
    
 }              
 
 
 // Initialize a new weather object 
 const weather = new Weather(); 
+
+// Event listener function for search button 
+document.querySelector('.search-button').addEventListener('click', function () {
+    weather.search();
+})
 
 
 
