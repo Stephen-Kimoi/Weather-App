@@ -1,18 +1,22 @@
 
 class Weather {
     constructor() {
-        this.apiKey = '3fd44b4056413ee144ec7c7fcef4a9fc'; 
+        this.apiKey = 'a4dcacc97a1e0a605f77b54329932e23'; 
     } 
 
     //function for fetching weather data 
     async getWeather(location) {
+        document.querySelector('.loading-icons').style.visibility = 'visible';
         await fetch (`http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${this.apiKey}`)
-           .then((Response) => Response.json())
-           .then((data) =>  { this.displayWeather(data); console.log(data) }); 
+           .then((Response) => { 
+               Response.json()
+            })
+           .then((data) =>  { this.displayWeather(data); console.log(data) }) 
+           .catch((err) => document.querySelector('h2').innerHTML = 'Sorry, an error occured!'); 
     } 
 
     // Function for displaying the weather data 
-    displayWeather(data) { 
+    displayWeather(data) {    
         const { name } =  data; 
         const  { temp, humidity } =  data.main; 
         const { speed } =  data.wind; 
@@ -34,8 +38,7 @@ class Weather {
     // Function for searching location 
     search () {
         this.getWeather(document.querySelector('.search-bar').value); 
-    }
-   
+    }    
 }              
 
 
@@ -45,6 +48,12 @@ const weather = new Weather();
 // Event listener function for search button 
 document.querySelector('.search-button').addEventListener('click', function () {
     weather.search();
+}); 
+
+document.querySelector('.search').addEventListener('keyup', function(event) {
+    if (event.key == 'Enter') {
+       weather.search();  
+    }
 })
 
 

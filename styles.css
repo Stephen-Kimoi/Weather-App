@@ -25,6 +25,7 @@ body {
     justify-content: center;
 }
 .search-bar { 
+    color: #eee;
     border: none;
     outline: none;
     border-radius: 24px;
@@ -48,4 +49,61 @@ body {
 } 
 h2, h1 {
     margin: 0px;
+} 
+.intro { 
+    padding-left: 60px; 
+    margin: auto;
+}
+.intro h3 {
+    padding-left: 20px;
+}
+.loading-icons {
+    width: 120px; 
+    height: 40px; 
+    margin: 0 auto;
+    display: flex;  
+    align-items: center; 
+    justify-items: space-between; 
+  } 
+  
+.loading-icons span {
+    display: block;   
+    width: 20px;
+    height: 20px; 
+    background: #000;  
+    border-radius: 50%; 
+    animation:effect .6s linear infinite alternate; 
+    transform: scale(0);
+    background: #b5c7e6; 
+} 
+.loading-icons span:nth-child(1) {
+    animation-delay: .1s; 
+} 
+
+.loading-icons span:nth-child(2) {
+    animation-delay: .2s; 
+} 
+
+.loading-icons span:nth-child(3) {
+    animation-delay: .3s; 
+} 
+
+.loading-icons span:nth-child(4) {
+    animation-delay: .4s;
+    background: #7c8588; 
+} 
+
+.loading-icons span:nth-child(5) {
+    animation-delay: .5s; 
+    background: #676f72;
+}  
+
+@keyframes effect {
+    100% {
+        transform: scale(1); 
+    }
+}
+
+.loading-icons {
+    display: none;
 } 
