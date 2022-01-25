@@ -1,16 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/5698813408.js" crossorigin="anonymous"></script>
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
 </head>
-<body> 
+
+<body>
+
+    <!-- navigation menu -->
+    <nav>
+        <div class="nav-menu">
+
+            <div class="set-location">
+                <button class="setLocation-btn" id="setLocation-btn">Set Location</button>
+            </div>
+
+            <div class="setLocation-modal" id="setLocation-modal">
+
+                <div class="location-modal" id="location-modal">
+
+                    <div class="modal-nav">
+                        <span class="modal-close" id="modal-close">X</span>
+                        <h2 class="modal-location" id="modal-location">LOCATION </h2>
+                        <span class="modal-minimize" id="modal-minimize">-</span>
+                    </div>
+
+                    <div class="modal-info">
+                        <input class="modal-search-location" type="text" placeholder="Location"><br>
+                        <button class="modal-search-btn" id="modal-search-btn">search</button>
+                        <span class="loader" id="loader"></span>
+                        <p>19:45</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="heading">
+                <h2>Weather App</h2>
+            </div>
+
+            <div class="hamburger">
+                <div class="bar"></div>
+            </div>
+
+            <div class="nav-hamburger">
+                <div class="nav-hamburger-links">
+                    <a href="index.html">Home</a>
+                    <a href="#">settings</a>
+                    <a href="#">blog</a>
+                    <a href="#">contact</a>
+                </div>
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- Main content section -->
+    <!-- 
+    <div class="location-display">
+         <h1>Location</h1>  
+    </div> -->
+
+    <div class="main-content">
+
+        <div class="icons">
+            <h3>Icons aknovkloanoiefjvnika</h3>
+        </div>
+
+        <div class="weather-info">
+            <h2 class="description">Mostly sunny</h2>
+            <h3 class="feels-like">Feels like 33 degrees celcius</h3>
+        </div>
+
+    </div>
+
+    <!---
     <div class="card">  
 
         <div class="intro">
@@ -46,9 +124,12 @@
             </div>
         </div> 
     </div>
-    
+-->
+
 
     <script src="weather.js"></script>
+    <script src="ui.js"></script>
     <script src="app.js"></script>
 </body>
+
 </html>
