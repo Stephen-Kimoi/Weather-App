@@ -1,3 +1,242 @@
+/* --- main css --- */ 
+:root {
+    --main-white: rgb(245, 238, 238);  
+    --main-black: rgb(3, 3, 3);
+    --main-font: ; 
+    --main-background:#000000d0; 
+    --main-transition: all 0.5s linear; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+body {
+    background-image: url('https://source.unsplash.com/WLUHO9A_xik/1600x900'); 
+    font-family: 'Lato', sans-serif;;
+}
+
+/* 
+   ======================================================================================= 
+    NAVIGATION MENU 
+   ======================================================================================= 
+*/   
+/* STYLES FOR SMALLER SCREENS */
+@media screen and (max-width: 400px) {
+    .hamburger {
+        display: block;
+    }
+} 
+nav {
+    background: var(--main-background); 
+    max-height: 20vh;
+    width: 100vw;
+    overflow: hidden;
+}  
+.nav-menu {
+    display: flex;
+    position: sticky;
+    align-content: center;
+    justify-content: space-between; 
+    padding: 10px; 
+} 
+.set-location {
+    color: var(--main-color);  
+} 
+.setLocation-btn {
+    color: var(--main-white);  
+    padding: 7px 20px; 
+    border: var(--main-black);
+    border-radius: 5px; 
+    background: var(--main-background);
+}  
+.setLocation-btn:hover {
+   transition: var(--main-transition); 
+   border: 1px solid var(--main-white);
+}
+.heading {
+    color: var(--main-white);
+    padding: .2rem;
+} 
+/*  ---  hamburger button menu  --- */
+.hamburger { 
+    padding: 3px;
+    width: 32px; 
+}
+.hamburger .bar, 
+.hamburger::before, 
+.hamburger::after {
+    width: 100%; 
+    height: 2px; 
+    background: var(--main-white); 
+    display: block;
+    content: ""; 
+    margin: 4px 0px; 
+    transition: 0.4s;
+}  
+.hamburger:hover{ 
+    transition: var(--main-transition);
+    border: 1px solid var(--main-white); 
+    border-radius: 5px;
+}
+.hamburger.is-active {  
+    font-size: 200px;
+    transform: rotate(-45deg) translate(-8px,6px);
+} 
+.hamburger.is-active {
+    transform: rotate(45deg) translate(-8px,-8px); 
+} 
+.is-active .bar {
+    opacity: 0;
+}  
+.nav-hamburger {
+   background-color: rgba(0,0,0,0.9); 
+   height: 100vh; 
+   width: 100vw;  
+   position: fixed; 
+   top: 0; 
+   right: 100%;
+}   
+.nav-hamburger-links {
+    background-color: var(--main-black); 
+    top: 0; 
+    left: 10;
+    height: 100vh;  
+    width: 20vw;   
+}
+.nav-hamburger-links a {
+    display: block; 
+    padding: 25px 12px; 
+    text-decoration: none; 
+    color: var(--main-white); 
+    display: flex;  
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;  
+} 
+.nav-hamburger-links a:hover {
+    color: #f85353d0; 
+}
+.nav-hamburger.open { 
+    transition: var(--main-transition);
+    right: 0;
+}
+/* --- location popup menu --- */ 
+.setLocation-modal {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0,0,0,0.9);  
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+    opacity: 0;  
+    pointer-events: none; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.9);
+}  
+.setLocation-modal.show { 
+    transition: var(--main-transition); 
+    opacity: 1; 
+    pointer-events: auto;
+}
+.location-modal {
+    background: var(--main-background); 
+    color: var(--main-white);
+    height: 200px;
+    width: 600px;
+    text-align: center;  
+    border-radius: 8px; 
+} 
+.modal-nav {
+    display: flex; 
+    align-items: top; 
+    justify-content: space-between;   
+    padding: 10px 25px;
+} 
+.modal-close {
+    font-size: 20px;
+}  
+.modal-close:hover { 
+    transition: var(--main-transition); 
+    font-size: 15px;
+    cursor: pointer;
+}
+.modal-minimize {
+    font-size:20px;
+} 
+.modal-minimize:hover { 
+    transition: var(--main-transition);
+    font-size: 15px;
+    cursor: pointer;
+}
+.modal-info {
+    padding-top: 30px;
+} 
+.modal-info input {
+    text-align: center;
+    padding: 7px; 
+    margin-bottom: 12px; 
+    border: 0; 
+    border-radius: 5px;   
+} 
+.modal-info button {
+    border: 1px solid var(--main-white); 
+    padding: 10px 25px; 
+    background-color: var(--main-background);  
+    border-radius: 5px; 
+    color: var(--main-white);   
+    margin-bottom: 10px;
+}
+.modal-loader {
+    font-size: 2rem;
+    display: none;
+}
+.modal-loader-info {
+    display: none;
+}
+/* 
+    ============================================================================= 
+    END OF NAVIGATION BAR MENU 
+    =============================================================================  
+*/ 
+
+/* 
+    ============================================================================== 
+    MAIN CONTENT SECTION 
+    ============================================================================== 
+*/  
+.location-display {
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+} 
+.main-content {
+    display: flex; 
+    flex-direction: column;
+    text-align: center;
+    padding: 50px;
+}
+.main-content-info { 
+    padding: 50px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}  
+.main-content .icons {
+    padding: 50px;   
+} 
+.main-content .weather-info {
+    padding: 50px; 
+    font-size: 30px;
+} 
+.main-content-location {
+    font-weight: 1000;
+}
+
+/*  
 body {
     display: flex;
     align-items: center;

@@ -1,16 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/5698813408.js" crossorigin="anonymous"></script>
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
 </head>
-<body> 
+
+<body>
+
+    <!-- navigation menu -->
+    <nav>
+        <div class="nav-menu">
+
+            <div class="heading">
+                <h2>Weather App</h2>
+            </div>
+
+            <div class="hamburger">
+                <div class="bar"></div>
+            </div>
+
+            <div class="nav-hamburger">
+                <div class="nav-hamburger-links">
+                    <a href="index.html">Home</a>
+                    <a href="#">settings</a>
+                    <a href="#">blog</a>
+                    <a href="#">contact</a>
+                    <button class="setLocation-btn" id="setLocation-btn">Set Location</button>
+                </div>
+            </div>
+
+            <div class="setLocation-modal" id="setLocation-modal">
+
+                <div class="location-modal" id="location-modal">
+
+                    <div class="modal-nav">
+                        <span class="modal-close" id="modal-close">X</span>
+                        <h2 class="modal-location" id="modal-location">LOCATION </h2>
+                        <span class="modal-minimize" id="modal-minimize">-</span>
+                    </div>
+
+                    <div class="modal-info">
+                        <input class="modal-search-location" type="text" placeholder="Location"><br>
+                        <button class="modal-search-btn" id="modal-search-btn">search</button>
+                        <span class="modal-loader" id="modal-loader"><i class="fas fa-spinner"></i></span><br>
+                        <p class="modal-loader-info">Fetching data...</p>
+                        <p class="modal-time">19:45</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </nav>
+
+    <div class="main-content">
+
+        <div class="main-content-heading">
+            <h4 class="main-content-location">Kindly set your location</h4>
+        </div>
+
+        <div class="main-content-info">
+            <div>
+                <img class="main-content-icon" src="" alt="Icon for weather">
+            </div>
+
+            <div class="weather-info">
+                <h2 class="description"> --- </h2>
+                <h3 class="feels-like"> --- </h3>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!---
     <div class="card">  
 
         <div class="intro">
@@ -46,9 +122,14 @@
             </div>
         </div> 
     </div>
-    
+-->
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="weather.js"></script>
+    <script src="ui.js"></script>
     <script src="app.js"></script>
 </body>
+
 </html>
