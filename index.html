@@ -23,8 +23,22 @@
     <nav>
         <div class="nav-menu">
 
-            <div class="set-location">
-                <button class="setLocation-btn" id="setLocation-btn">Set Location</button>
+            <div class="heading">
+                <h2>Weather App</h2>
+            </div>
+
+            <div class="hamburger">
+                <div class="bar"></div>
+            </div>
+
+            <div class="nav-hamburger">
+                <div class="nav-hamburger-links">
+                    <a href="index.html">Home</a>
+                    <a href="#">settings</a>
+                    <a href="#">blog</a>
+                    <a href="#">contact</a>
+                    <button class="setLocation-btn" id="setLocation-btn">Set Location</button>
+                </div>
             </div>
 
             <div class="setLocation-modal" id="setLocation-modal">
@@ -40,28 +54,11 @@
                     <div class="modal-info">
                         <input class="modal-search-location" type="text" placeholder="Location"><br>
                         <button class="modal-search-btn" id="modal-search-btn">search</button>
-                        <span class="loader" id="loader"></span>
-                        <p>19:45</p>
+                        <span class="modal-loader" id="modal-loader"><i class="fas fa-spinner"></i></span><br>
+                        <p class="modal-loader-info">Fetching data...</p>
+                        <p class="modal-time">19:45</p>
                     </div>
 
-                </div>
-
-            </div>
-
-            <div class="heading">
-                <h2>Weather App</h2>
-            </div>
-
-            <div class="hamburger">
-                <div class="bar"></div>
-            </div>
-
-            <div class="nav-hamburger">
-                <div class="nav-hamburger-links">
-                    <a href="index.html">Home</a>
-                    <a href="#">settings</a>
-                    <a href="#">blog</a>
-                    <a href="#">contact</a>
                 </div>
             </div>
 
@@ -69,24 +66,25 @@
 
     </nav>
 
-    <!-- Main content section -->
-    <!-- 
-    <div class="location-display">
-         <h1>Location</h1>  
-    </div> -->
-
     <div class="main-content">
 
-        <div class="icons">
-            <h3>Icons aknovkloanoiefjvnika</h3>
+        <div class="main-content-heading">
+            <h4 class="main-content-location">Kindly set your location</h4>
         </div>
 
-        <div class="weather-info">
-            <h2 class="description">Mostly sunny</h2>
-            <h3 class="feels-like">Feels like 33 degrees celcius</h3>
+        <div class="main-content-info">
+            <div>
+                <img class="main-content-icon" src="" alt="Icon for weather">
+            </div>
+
+            <div class="weather-info">
+                <h2 class="description"> --- </h2>
+                <h3 class="feels-like"> --- </h3>
+            </div>
         </div>
 
     </div>
+
 
     <!---
     <div class="card">  
@@ -126,7 +124,9 @@
     </div>
 -->
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="weather.js"></script>
     <script src="ui.js"></script>
     <script src="app.js"></script>
