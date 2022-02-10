@@ -9,6 +9,7 @@ const modal_time = document.querySelector('.modal-time');
 const modal_loader = document.querySelector('.modal-loader'); 
 const modal_loader_info = document.querySelector('.modal-loader-info'); 
 const set_location_modal = document.querySelector('.setLocation-modal'); 
+const close_nav = document.querySelector('.close-nav');  
 
 class UI {
     constructor() {
@@ -53,3 +54,6 @@ set_location_modal.addEventListener('click', () => {
     } 
 })
 
+close_nav.addEventListener('click', () => {
+    nav_hamburger.classList.remove('open'); 
+})
