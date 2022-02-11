@@ -22,56 +22,6 @@ body {
     NAVIGATION MENU 
    ======================================================================================= 
 */   
-/* Styles for smaller screens */
-@media all and (max-width: 480px) { 
-    .hamburger .bar, 
-    .hamburger::before, 
-    .hamburger::after {
-        display: block;
-    }
-    .nav-hamburger-links {
-       background-color: var(--main-black); 
-       top: 0; 
-       left: 10;
-       height: 100vh;  
-       width: 30vw; 
-    } 
-    .nav-hamburger {
-        background-color: rgba(0,0,0,0.9); 
-        height: 100vh; 
-        width: 100vw;  
-        position: fixed; 
-        top: 0; 
-        right: 100%;
-    }   
-    .nav-hamburger-links {
-        background-color: var(--main-black); 
-        top: 0; 
-        left: 10;
-        height: 100vh;  
-        width: 20vw;   
-    }
-    .nav-hamburger-links a {
-        display: block; 
-        padding: 25px 12px; 
-        text-decoration: none; 
-        color: var(--main-white); 
-        display: flex;  
-        flex-direction: column; 
-        justify-content: center;
-        align-items: center;  
-    }  
-    .nav-hamburger-links .close-nav{
-        visibility: visible;
-    }
-    .nav-hamburger-links a:hover {
-        color: #f85353d0; 
-    }
-    .nav-hamburger.open { 
-        transition: var(--main-transition);
-        right: 0;
-    }
-}
 
 /* Styles for large screens */
 nav {
@@ -104,7 +54,8 @@ nav {
 .heading {
     color: var(--main-white);
     padding: .2rem;
-} 
+}  
+
 /*  ---  hamburger button menu  --- */
 .hamburger { 
     padding: 3px;
@@ -136,7 +87,9 @@ nav {
 } 
 .is-active .bar {
     opacity: 0;
-}   
+}    
+
+
 /* Navigation menu */ 
 .nav-hamburger-links {
     display: flex; 
@@ -148,10 +101,11 @@ nav {
     padding: 10px; 
     color: var(--main-white);
     font-weight: 100;
-}
+} 
 .nav-hamburger-links .close-nav {
-    display: none;
+    visibility: hidden;
 }
+
 /* --- location popup menu --- */ 
 .setLocation-modal {
     position: fixed; 
@@ -226,6 +180,66 @@ nav {
 }
 .modal-loader-info {
     display: none;
+} 
+
+/*  Styles for smaller screens */
+@media all and (max-width: 480px) { 
+    .hamburger .bar, 
+    .hamburger::before, 
+    .hamburger::after {
+        visibility: visible;
+    }
+    .nav-hamburger-links {
+       background-color: var(--main-black); 
+       top: 0; 
+       left: 10;
+       height: 100vh;  
+       width: 30vw; 
+    } 
+    .nav-hamburger {
+        background-color: rgba(0,0,0,0.9); 
+        height: 100vh; 
+        width: 100vw;  
+        position: fixed; 
+        top: 0; 
+        right: 100%;
+    }   
+    .nav-hamburger-links {
+        background-color: var(--main-black);
+        height: 90vh;   
+        width: 50vw;   
+        display: flex; 
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+    }
+    .nav-hamburger-links a {
+        display: block; 
+        padding: 25px 12px; 
+        text-decoration: none; 
+        color: var(--main-white); 
+        display: flex;  
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;  
+    }  
+    .nav-hamburger-links .close-nav{ 
+        border: 1px solid #f85353d0; 
+        border-radius: 5px; 
+        padding: 0; 
+        width: 50%; 
+        margin: 10px auto;
+        visibility: visible;
+    }
+    .nav-hamburger-links a:hover {
+        color: #f85353d0; 
+    }
+    .nav-hamburger.open { 
+        transition: var(--main-transition);
+        right: 0;
+    } 
+
+
 }
 /* 
     ============================================================================= 
@@ -276,6 +290,12 @@ nav {
     font-size: 40px; 
     color: var(--main-white);
 }  
+.modal-time {
+    color: var(--main-white); 
+    font-size: 15px; 
+    font-weight: 200;
+}
+
 /* for large screens */
 @media all and (min-width: 768px) and (max-width:1480px) {
     .main-content-info {
@@ -286,3 +306,42 @@ nav {
         margin-left: 100px;
     }
 }
+
+/* =====================================================================
+   END OF MAIN CONTENT SECTION 
+   =====================================================================
+*/ 
+
+/* =====================================================================
+   OTHER CONTENT SECTION 
+   =====================================================================
+*/ 
+.other-content {
+    display: flex;  
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    align-items: center; 
+    margin: 20px 30px;
+} 
+.other-content div {
+    width: 15vw; 
+    height: 20vh; 
+    background: var(--main-background);
+    border-radius: 10px; 
+    color: var(--main-white);
+    text-align: center; 
+} 
+.other-content h3 {
+    padding: 50px; 
+} 
+@media all and (max-width:480px) {
+    .other-content {
+        display: flex;
+        flex-direction: column;
+    } 
+    .other-content div {
+        width: 50vw; 
+        height: 20vh; 
+        margin: 10px auto; 
+    } 
+} 

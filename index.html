@@ -33,12 +33,12 @@
 
             <div class="nav-hamburger">
                 <div class="nav-hamburger-links"> 
-                    <a href="#" class="close-nav">X</a>
                     <a href="index.html">Home</a>
                     <a href="#">settings</a>
                     <a href="#">blog</a>
                     <a href="#">contact</a> 
-                    <button class="setLocation-btn" id="setLocation-btn">Set Location</button>
+                    <button class="setLocation-btn" id="setLocation-btn">Set Location</button> 
+                    <a href="#" class="close-nav">Close</a> 
                 </div>
             </div>
 
@@ -55,9 +55,7 @@
                     <div class="modal-info">
                         <input class="modal-search-location" type="text" placeholder="Location"><br>
                         <button class="modal-search-btn" id="modal-search-btn">search</button>
-                        <span class="modal-loader" id="modal-loader"><i class="fas fa-spinner"></i></span><br>
                         <p class="modal-loader-info">Fetching data...</p>
-                        <p class="modal-time">19:45</p>
                     </div>
 
                 </div>
@@ -72,7 +70,8 @@
     <div class="main-content">
 
         <div class="main-content-heading">
-            <h4 class="main-content-location">LONDON</h4>
+            <h4 class="main-content-location">Kindly set location</h4>
+            <p class="modal-time"> 19:45 </p>
         </div>
 
         <div class="main-content-info">
@@ -81,9 +80,38 @@
             </div>
 
             <div class="weather-info">
-                <h2 class="description">Temp: 5.46</h2>
-                <h3 class="feels-like">Feels like: 38</h3> 
+                <h2 class="description">Temp:<br>--</h2>
+                <h3 class="feels-like">Feels like:<br>--</h3>  
             </div>
+        </div>
+
+    </div> 
+
+    <!-- OTHER CONTENT SECTION --> 
+    <div class="other-content">
+        
+        <div> 
+            <h3 class="wind-section">Wind:<br>--</h3>
+        </div> 
+
+        <div>
+            <h3 class="humidity-section">Humidity:<br>--</h3>
+        </div> 
+
+        <div>
+            <h3 class="visibility-section">Visibility:<br>--</h3> 
+        </div> 
+
+        <div>
+            <h3 class="pressure-setion">Pressure:<br>--</h3>
+        </div>  
+
+        <div>
+            <h3 class="longlat-section">longitude:<br>--<br>Latitude:<br>--</h3>
+        </div> 
+
+        <div>
+            <h3 class="sunrisunset-section">Sunrise:<br>--<br>Sunset:<br>--</h3> 
         </div>
 
     </div>

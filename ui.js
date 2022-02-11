@@ -9,8 +9,14 @@ const modal_time = document.querySelector('.modal-time');
 const modal_loader = document.querySelector('.modal-loader'); 
 const modal_loader_info = document.querySelector('.modal-loader-info'); 
 const set_location_modal = document.querySelector('.setLocation-modal'); 
-const close_nav = document.querySelector('.close-nav');  
+const close_nav = document.querySelector('.close-nav');   
 
+// Initializing moment 
+const m = moment(); 
+
+console.log(m.toString()); 
+
+// UI object
 class UI {
     constructor() {
         
@@ -19,15 +25,17 @@ class UI {
     showLoader() {
         modal_search_btn.style.display = 'none'; 
         modal_time.style.display = 'none'; 
-        modal_loader.style.display = 'block'; 
         modal_loader_info.style.display = 'block'; 
     } 
 
     removeLoader() {
         modal_search_btn.style.display = 'block'; 
-        modal_time.style.display = 'block';
-        modal_loader.style.display = 'none'; 
+        modal_time.innerHTML = `${m.format('LT')}`; 
         modal_loader_info.style.display = 'none'; 
+    } 
+
+    removeSetLocationModal() {
+        setLocationModal.classList.remove('show'); 
     }
 }
 
@@ -35,7 +43,8 @@ class UI {
 
 // Event listeners 
 setLocationBtn.addEventListener('click', () => {
-   setLocationModal.classList.add('show');    
+   setLocationModal.classList.add('show');  
+   nav_hamburger.classList.remove('open'); 
 }) 
 
 modalClose.addEventListener('click', () => {
