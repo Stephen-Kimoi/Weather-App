@@ -11,7 +11,7 @@ const description2 = document.querySelector('.description');
 const feels2_like = document.querySelector('.feels-like'); 
 const main_content_location = document.querySelector('.main-content-location'); 
 const main_content_icons = document.querySelector('.main_content_icons'); 
-const wind_section = document.querySelector('.wind-section');  
+const wind_section = document.getElementById('wind-section');  
 const humidity_section = document.querySelector('.humidity-section'); 
 const visibility_section = document.querySelector('.visibility-section'); 
 const pressure_section = document.querySelector('.pressure-section');  
@@ -26,18 +26,37 @@ locationBtn.addEventListener('click', displayWeather);
 // Functions 
 function displayWeather(e) {
      
-    const location = setLocation.value; 
+    // Get location value
+    const location = setLocation.value;
+
+    // Setting the time value 
+    const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat']; 
+    const months = ['Jan','Feb', 'Mar','Apr', 'May','Jun','Jul','Aug','Sept','Oct','Nov','Dec']; 
+
+    const time = new Date();  
+    const month = time.getMonth(); 
+    const day = time.getDay(); 
+    const hour = time.getHours(); 
+    const minutes = time.getMinutes(); 
+    const seconds = time.getSeconds();  
+    const date = time.getDate();
+    const hoursTo12HrFormat = hour >= 13 ? hour % 12 : hour; 
+
+    modal_time.innerHTML = `${days[day]} ${months[month]} ${date}th ${hoursTo12HrFormat}:${minutes}`; 
+    
+    console.log(date); 
+    console.log(month, day, hour, minutes, seconds);    
     
     if (location !== "") {
         Weather.getWeather(location)
           .then(data => {
-              
+            console.log(data); 
             if (Response.status === 404 ) {
  
             } else {  
                 ui.showLoader(); 
                 
-                setTimeout(() => { 
+                setTimeout(() => {  
                     ui.removeLoader(); 
                     ui.removeSetLocationModal(); 
 

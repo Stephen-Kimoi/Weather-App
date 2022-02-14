@@ -15,6 +15,7 @@ const close_nav = document.querySelector('.close-nav');
 const m = moment(); 
 
 console.log(m.toString()); 
+console.log(m.format('llll')); 
 
 // UI object
 class UI {
@@ -23,14 +24,13 @@ class UI {
     } 
 
     showLoader() {
-        modal_search_btn.style.display = 'none'; 
-        modal_time.style.display = 'none'; 
+        modal_search_btn.style.visibility = 'hidden'; 
         modal_loader_info.style.display = 'block'; 
     } 
 
     removeLoader() {
-        modal_search_btn.style.display = 'block'; 
-        modal_time.innerHTML = `${m.format('LT')}`; 
+        modal_search_btn.style.visibility= 'visible'; 
+        // modal_time.innerHTML = `${m.format('LT')}`; 
         modal_loader_info.style.display = 'none'; 
     } 
 
