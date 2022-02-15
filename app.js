@@ -33,14 +33,14 @@ function displayWeather(e) {
     const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat']; 
     const months = ['Jan','Feb', 'Mar','Apr', 'May','Jun','Jul','Aug','Sept','Oct','Nov','Dec']; 
 
-    const time = new Date();  
-    const month = time.getMonth(); 
-    const day = time.getDay(); 
-    const hour = time.getHours(); 
-    const minutes = time.getMinutes(); 
-    const seconds = time.getSeconds();  
-    const date = time.getDate();
-    const hoursTo12HrFormat = hour >= 13 ? hour % 12 : hour; 
+    // const time = new Date();  
+    // const month = time.getMonth(); 
+    // const day = time.getDay(); 
+    // const hour = time.getHours(); 
+    // const minutes = time.getMinutes(); 
+    // const seconds = time.getSeconds();  
+    // const date = time.getDate();
+    // const hoursTo12HrFormat = hour >= 13 ? hour % 12 : hour; 
 
     modal_time.innerHTML = `${days[day]} ${months[month]} ${date}th ${hoursTo12HrFormat}:${minutes}`; 
     

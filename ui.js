@@ -10,12 +10,15 @@ const modal_loader = document.querySelector('.modal-loader');
 const modal_loader_info = document.querySelector('.modal-loader-info'); 
 const set_location_modal = document.querySelector('.setLocation-modal'); 
 const close_nav = document.querySelector('.close-nav');   
+const date_section = document.querySelector('.date-section'); 
+const time_section = document.querySelector('.time-section'); 
 
-// Initializing moment 
+// Adding dates  
 const m = moment(); 
 
-console.log(m.toString()); 
-console.log(m.format('llll')); 
+date_section.innerHTML = `${m.format('MMM Do YY')}`; 
+time_section.innerHTML = `${m.format('LTS')}`; 
+
 
 // UI object
 class UI {
