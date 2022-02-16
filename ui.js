@@ -17,7 +17,7 @@ const time_section = document.querySelector('.time-section');
 const m = moment(); 
 
 date_section.innerHTML = `${m.format('MMM Do YY')}`; 
-time_section.innerHTML = `${m.format('LTS')}`; 
+time_section.innerHTML = `${m.format('LT')}`; 
 
 
 // UI object

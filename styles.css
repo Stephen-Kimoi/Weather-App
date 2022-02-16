@@ -183,7 +183,7 @@ nav {
 } 
 
 /*  Styles for smaller screens */
-@media all and (max-width: 480px) { 
+@media all and (max-width: 1024px) { 
     .hamburger .bar, 
     .hamburger::before, 
     .hamburger::after {
@@ -250,10 +250,25 @@ nav {
 /*  =============================================================================
     TIME AND DATE SECTION 
     =============================================================================
-*/ 
+*/  
+.timeDate-section {
+    color: var(--main-white); 
+    display: flex;
+    justify-content: space-between;
+    font-size: 30px; 
+    font-weight: 800;
+} 
+.date-section { 
+    padding-top: 10px; 
+} 
+.time-section { 
+    padding-top: 10px;
+}
+
 @media all and (max-width:480px) {
     .timeDate-section { 
-        width: 40vw;
+        width: 40vw; 
+        display: block;
         margin: 0 auto; 
         padding-left: 30px;
         color: var(--main-white); 
@@ -261,14 +276,13 @@ nav {
         font-weight: 800;
     }  
     .date-section {
-        padding-top: 20px;
+        padding-top: 20px;     
     }
     .time-section {
         padding-top: 10px;
-        padding-left: 2px;
+        padding-left: 15px;
     }
 }
-
 /* 
     ============================================================================== 
     MAIN CONTENT SECTION 
@@ -295,6 +309,7 @@ nav {
     display: flex; 
     align-items: center; 
     justify-content: center; 
+    overflow: auto;
 }  
 .main-content .icons {
     height: fit-content;    
@@ -305,6 +320,7 @@ nav {
     font-size: 30px; 
     color: aliceblue;
 }  
+
 .weather-info .description {
     margin-bottom: 30px;
 }
@@ -356,7 +372,8 @@ nav {
 .other-content h3 {
     padding: 50px; 
 } 
-@media all and (max-width:480px) {
+
+@media all and (max-width:1024px) {
     .other-content {
         display: flex;
         flex-direction: column;
