@@ -58,13 +58,13 @@ menu_btn.addEventListener('click', () => {
     nav_hamburger.classList.toggle('open'); 
 })
 
-set_location_modal.addEventListener('click', () => {
-    if(className === 'modal-info') {
+// set_location_modal.addEventListener('click', () => {
+//     if(className === 'modal-info') {
  
-    } else {
-        setLocationModal.classList.remove('show'); 
-    } 
-})
+//     } else {
+//         setLocationModal.classList.remove('show'); 
+//     } 
+// })
 
 close_nav.addEventListener('click', () => {
     nav_hamburger.classList.remove('open'); 
