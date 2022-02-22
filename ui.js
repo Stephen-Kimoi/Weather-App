@@ -44,7 +44,26 @@ class UI {
         
     } 
 
+    displayError() {  
+        this.showLoader(); 
+        setTimeout( () => {
+        modal_search_btn.style.visibility = 'visible'; 
+        modal_loader_info.style.display = 'block';
+        modal_search_btn.innerText = 'Reload';  
+        modal_loader_info.innerHTML = 'Sorry your location could not be found. Kindly reload.'; 
+        modalLocation.innerHTML = 'ERROR!'; 
+        setLocation.value = ''; 
+        modal_search_btn.addEventListener( 'click', () => {
+            console.log(1234)
+            modal_loader_info.style.display = 'none';
+            modal_search_btn.innerText = 'Search';  
+            modalLocation.innerHTML = 'SET LOCATION'; 
+        })
+    }, 3000)
+    }
+
     showLoader() {
+        modalLocation.innerHTML = 'LOADING..'; 
         modal_search_btn.style.visibility = 'hidden'; 
         modal_loader_info.style.display = 'block'; 
     } 
@@ -58,6 +77,8 @@ class UI {
     removeSetLocationModal() {
         setLocationModal.classList.remove('show'); 
     }
+
+
 }
 
 
@@ -87,3 +108,4 @@ menu_btn.addEventListener('click', () => {
 close_nav.addEventListener('click', () => {
     nav_hamburger.classList.remove('open'); 
 })
+

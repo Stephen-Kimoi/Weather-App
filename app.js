@@ -27,29 +27,15 @@ locationBtn.addEventListener('click', displayWeather);
 function displayWeather(e) {
      
     // Get location value
-    const location = setLocation.value;
-
-    // // Setting the time value 
-    // const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat']; 
-    // const months = ['Jan','Feb', 'Mar','Apr', 'May','Jun','Jul','Aug','Sept','Oct','Nov','Dec']; 
-
-    // // const time = new Date();  
-    // // const month = time.getMonth(); 
-    // // const day = time.getDay(); 
-    // // const hour = time.getHours(); 
-    // // const minutes = time.getMinutes(); 
-    // // const seconds = time.getSeconds();  
-    // // const date = time.getDate();
-    // // const hoursTo12HrFormat = hour >= 13 ? hour % 12 : hour; 
-
-    // modal_time.innerHTML = `${days[day]} ${months[month]} ${date}th ${hoursTo12HrFormat}:${minutes}`; preventi  
+    const location = setLocation.value; 
     
     if (location !== "") {
         Weather.getWeather(location)
           .then(data => {
             console.log(data); 
-            if (Response.status === 404 ) {
- 
+            if ( data.data.cod === "404") {
+                console.log('liiiidddddd');  
+                ui.displayError();
             } else {  
                 ui.showLoader(); 
                 
@@ -64,13 +50,13 @@ function displayWeather(e) {
                     const { temp, feels_like} = data.data.main; 
                     const { description, icon } = data.data.weather[0]; 
                     const { speed } = data.data.wind; 
-                    const { visibility } = data.data.visibility; 
-                    const { humidity } = data.data.main.humidity; 
-                    const { pressure } = data.data.main.pressure; 
-                    const { lon } = data.data.coord.lon; 
-                    const { lat } = data.data.coord.lat; 
-                    const { sunrise } = data.data.sys.sunrise; 
-                    const { sunset } = data.data.sys.sunset; 
+                    const { visibility } = data.data; 
+                    const { humidity } = data.data.main; 
+                    const { pressure } = data.data.main; 
+                    const { lon } = data.data.coord; 
+                    const { lat } = data.data.coord; 
+                    const { sunrise } = data.data.sys; 
+                    const { sunset } = data.data.sys; 
 
                     // Main content section 
                     modalLocation.innerHTML = `${name}`;  
@@ -80,12 +66,12 @@ function displayWeather(e) {
                     main_content_icons.src = `https://openweathermap.org/img/wn/${icon}@2x.png`;  
                     
                     // Other content section 
-                    wind_section.innerHTML = `Wind:<br>${speed}`;  
-                    humidity_section.innerHTML = `Humidity:<br>${humidity}`; 
-                    visibility_section.innerHTML = `Visibility:<br>${visibility}`;
-                    pressure_section.innerHTML = `Pressure:<br>${pressure}`;
-                    longlat_section.innerHTML = `Longitude:<br>${lon}<br>Latitude:${lat}`;
-                    sunrisunset_section.innerHTML = `Sunrise:<br>${sunrise}<br>Sunset${sunset}`;
+                    wind_section.innerHTML = `Wind:<br><br>${speed}`;  
+                    humidity_section.innerHTML = `Humidity:<br><br>${humidity}`; 
+                    visibility_section.innerHTML = `Visibility:<br><br>${visibility}`;
+                    pressure_section.innerHTML = `Pressure:<br><br>${pressure}`; 
+                    longlat_section.innerHTML = `Longitude:<br>${lon}<br>Latitude:<br>${lat}`;  
+                    sunrisunset_section.innerHTML = `Sunrise:<br>${window.moment(sunrise).format('hh:mm a')}<br>Sunset:<br>${window.moment(sunset).format('hh:mm a')}`; 
                 }, 3000)  
             }
           })
