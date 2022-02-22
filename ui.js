@@ -16,8 +16,26 @@ const time_section = document.querySelector('.time-section');
 // Adding dates  
 const m = moment(); 
 
-date_section.innerHTML = `${m.format('MMM Do YY')}`; 
-time_section.innerHTML = `${m.format('LT')}`; 
+function getTime () {
+  // date_section.innerHTML = `${m.format('MMM Do YY')}`; 
+  // time_section.innerHTML = `${m.format('LTS')}`;  
+
+  const days = ['Sun','Mon','Tue','Wed','Thur','Fri','Sat']; 
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']; 
+
+  const time = new Date; 
+  const seconds = time.getSeconds(); 
+  const hours = time.getHours(); 
+  const minutes = time.getMinutes(); 
+  const day = time.getDay(); 
+  const month = time.getMonth();  
+  const date = time.getDate(); 
+
+  date_section.innerHTML = `${days[day]} ${date}nd ${months[month]}`; 
+  time_section.innerHTML = `${hours}:${minutes}:${seconds}`; 
+} 
+
+setInterval(getTime, 1000); 
 
 
 // UI object

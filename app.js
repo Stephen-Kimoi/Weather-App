@@ -10,7 +10,7 @@ const modalLocation = document.querySelector('.modal-location');
 const description2 = document.querySelector('.description');  
 const feels2_like = document.querySelector('.feels-like'); 
 const main_content_location = document.querySelector('.main-content-location'); 
-const main_content_icons = document.querySelector('.main_content_icons'); 
+const main_content_icons = document.querySelector('.main-content-icon'); 
 const wind_section = document.getElementById('wind-section');  
 const humidity_section = document.querySelector('.humidity-section'); 
 const visibility_section = document.querySelector('.visibility-section'); 
@@ -42,7 +42,7 @@ function displayWeather(e) {
     // // const date = time.getDate();
     // // const hoursTo12HrFormat = hour >= 13 ? hour % 12 : hour; 
 
-    // modal_time.innerHTML = `${days[day]} ${months[month]} ${date}th ${hoursTo12HrFormat}:${minutes}`;   
+    // modal_time.innerHTML = `${days[day]} ${months[month]} ${date}th ${hoursTo12HrFormat}:${minutes}`; preventi  
     
     if (location !== "") {
         Weather.getWeather(location)
@@ -59,25 +59,33 @@ function displayWeather(e) {
 
                     setLocation.value = "";  
 
+                    // Destructuring from API data
                     const { name } = data.data; 
-                    const { temp, humidity, feels_like, pressure, lon, lat } = data.data.main; 
+                    const { temp, feels_like} = data.data.main; 
                     const { description, icon } = data.data.weather[0]; 
                     const { speed } = data.data.wind; 
-                    const { visibility } = data.data; 
-                    const { sunrise, sunset } = data.data.sys;  
+                    const { visibility } = data.data.visibility; 
+                    const { humidity } = data.data.main.humidity; 
+                    const { pressure } = data.data.main.pressure; 
+                    const { lon } = data.data.coord.lon; 
+                    const { lat } = data.data.coord.lat; 
+                    const { sunrise } = data.data.sys.sunrise; 
+                    const { sunset } = data.data.sys.sunset; 
 
+                    // Main content section 
                     modalLocation.innerHTML = `${name}`;  
                     main_content_location.innerHTML = `${name}`.toUpperCase(); 
                     feels2_like.innerHTML = `Feels like: ${feels_like}&degC`; 
                     description2.innerHTML = `Temp: ${temp}&degC`;  
-                    main_content_icons.innerHTML = `<img src='https://openweathermap.org/img/wn/${icon}@2x.png' alt='icon for weather'`;  
-                    wind_section.innerHTML = 'I am loved'; 
-                    wind_section.innerHTML = `Wind speed:<br>${speed}`;  
-                    humidity_section.innerHTML = `<h3>Humidity:<br>${humidity}</h3>`; 
-                    visibility_section.innerHTML = `<h3>Visibility:<br>${visibility}</h3>`; 
-                    pressure_section.innerHTML = `<h3>Pressure:<br>${pressure}</h3>`; 
-                    longlat_section.innerHTML = `<h3>Longitude:${lon}<br>Latitude:${lat}</h3>`; 
-                    sunrisunset_section.innerHTML = `<h3>Sunrise:${sunrise}<br>Sunset:${sunset}</h3>`; 
+                    main_content_icons.src = `https://openweathermap.org/img/wn/${icon}@2x.png`;  
+                    
+                    // Other content section 
+                    wind_section.innerHTML = `Wind:<br>${speed}`;  
+                    humidity_section.innerHTML = `Humidity:<br>${humidity}`; 
+                    visibility_section.innerHTML = `Visibility:<br>${visibility}`;
+                    pressure_section.innerHTML = `Pressure:<br>${pressure}`;
+                    longlat_section.innerHTML = `Longitude:<br>${lon}<br>Latitude:${lat}`;
+                    sunrisunset_section.innerHTML = `Sunrise:<br>${sunrise}<br>Sunset${sunset}`;
                 }, 3000)  
             }
           })
