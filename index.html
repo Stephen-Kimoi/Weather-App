@@ -38,7 +38,7 @@
                     <a href="#">settings</a>
                     <a href="#">blog</a>
                     <a href="#">contact</a> 
-                    <button class="setLocation-btn" id="setLocation-btn">Set Location</button>
+                    <button class="setLocation-btn" id="setLocation-btn">Set Location</button>  
                 </div>
             </div>
 
@@ -48,16 +48,14 @@
 
                     <div class="modal-nav">
                         <span class="modal-close" id="modal-close">X</span>
-                        <h2 class="modal-location" id="modal-location">LOCATION </h2>
+                        <h2 class="modal-location" id="modal-location">SET LOCATION</h2>
                         <span class="modal-minimize" id="modal-minimize">-</span>
                     </div>
 
                     <div class="modal-info">
                         <input class="modal-search-location" type="text" placeholder="Location"><br>
                         <button class="modal-search-btn" id="modal-search-btn">search</button>
-                        <span class="modal-loader" id="modal-loader"><i class="fas fa-spinner"></i></span><br>
                         <p class="modal-loader-info">Fetching data...</p>
-                        <p class="modal-time">19:45</p>
                     </div>
 
                 </div>
@@ -67,24 +65,60 @@
 
     </nav> 
 
+   <!-- TIME AND DATE SECTION --> 
+   <div class="timeDate-section"> 
+       <p class="date-section">--</p>
+       <p class="time-section">--</p>
+   </div>  
+
 
     <!-- MAIN CONENT SECTION  -->
     <div class="main-content">
 
         <div class="main-content-heading">
-            <h4 class="main-content-location">LONDON</h4>
+            <h4 class="main-content-location">Kindly set location</h4>
+            <p class="modal-time"></p>
         </div>
 
         <div class="main-content-info">
-            <div class="main-content-icon">
-                <img src="https://openweathermap.org/img/wn/04n@2x.png" alt="Icon for weather">
+            <div>
+                <img class="main-content-icon" src="https://openweathermap.org/img/wn/04n@2x.png" alt="Icon for weather">
             </div>
 
             <div class="weather-info">
-                <h2 class="description">Temp: 5.46</h2>
-                <h3 class="feels-like">Feels like: 38</h3> 
+                <h2 class="description">Temp:<br>--</h2>
+                <h3 class="feels-like">Feels like:<br>--</h3>  
             </div>
         </div>
+
+    </div> 
+
+    <!-- OTHER CONTENT SECTION --> 
+    <div class="other-content">
+
+            <div>
+                <h3 id="wind-section">Wind:<br>--</h3>
+            </div>
+            
+            <div>
+                <h3 class="humidity-section">Humidity:<br>--</h3>
+            </div>
+            
+            <div>
+                <h3 class="visibility-section">Visibility:<br>--</h3>
+            </div>
+
+            <div>
+                <h3 class="pressure-section">Pressure:<br>--</h3>
+            </div>
+            
+            <div>
+                <h3 class="longlat-section">longitude:<br>--<br>Latitude:<br>--</h3>
+            </div>
+            
+            <div>
+                <h3 class="sunrisunset-section">Sunrise:<br>--<br>Sunset:<br>--</h3>
+            </div>
 
     </div>
 
