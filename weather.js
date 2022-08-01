@@ -7,8 +7,8 @@ class weather {
     async getWeather(location) { 
         let response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${this.apiKey}&units=metric`)  
         
+        
         let data = await response.json(); 
-      
 
         return {
             data 

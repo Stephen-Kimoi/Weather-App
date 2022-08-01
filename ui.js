@@ -23,6 +23,7 @@ function getTime () {
   const days = ['Sun','Mon','Tue','Wed','Thur','Fri','Sat']; 
   const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']; 
 
+
   const time = new Date; 
   const seconds = time.getSeconds(); 
   const hours = time.getHours(); 
@@ -36,6 +37,7 @@ function getTime () {
 } 
 
 setInterval(getTime, 1000); 
+
 
 
 // UI object
@@ -104,6 +106,8 @@ menu_btn.addEventListener('click', () => {
 //         setLocationModal.classList.remove('show'); 
 //     } 
 // })
+
+
 
 close_nav.addEventListener('click', () => {
     nav_hamburger.classList.remove('open'); 
