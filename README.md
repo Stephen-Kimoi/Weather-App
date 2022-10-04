@@ -1,3 +1,11 @@
-##
+# WEATHER APP
 Weather app using openweather API 
-I made it using HTML, CSS and JavaScript 
+
+# UI 
+![Weather app](./weather_app.png)
+
+# Live link 
+You can interact with the web app over [here](https://weather-app-steve.netlify.app/)
+
+# Contributors
+[Stephen Kimoi](https://kimoisteve.me)
